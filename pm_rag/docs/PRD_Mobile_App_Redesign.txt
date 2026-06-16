@@ -1,0 +1,64 @@
+PRODUCT REQUIREMENTS DOCUMENT
+Feature: Employee Self-Service Mobile App — Redesign (v4.0)
+Version: 1.4 | Status: Approved | Last Updated: February 2025
+Author: James Okonkwo, PM — Employee Experience
+Reviewers: Mobile Eng Lead (Tanya Rao), UX (Carlos Ibáñez), Security (Nadia Klein)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. PROBLEM STATEMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Workday's mobile app (iOS and Android) has a 2.8-star average rating across 14,000 App Store reviews. The three most common complaint categories are: slow load times on pay stubs and benefit summaries (cited in 38% of 1-star reviews), confusing navigation for time-off requests (29%), and inability to complete manager approvals on mobile (21%). Meanwhile, 64% of employee interactions with HR data now happen outside business hours, a 22-point increase since 2021. Employees increasingly expect consumer-grade mobile experiences for HR tasks. Poor mobile UX directly drives calls to HR service desks — our internal data shows mobile UX issues generate 3,200 avoidable HR helpdesk contacts per month across enterprise customers.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. GOALS AND SUCCESS METRICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Primary Goal: Increase mobile app store rating from 2.8 to 4.0 stars within 6 months of v4.0 release.
+
+Key Results:
+- KR1: Reduce average time to complete a time-off request on mobile from 4 min 12 sec to under 90 seconds. Baseline from session replay analysis (FullStory). Timeline: Measured 60 days post-launch.
+- KR2: Increase manager approval completion rate on mobile from 34% to 70%. Baseline: internal telemetry. Target: 70%. Timeline: 90 days.
+- KR3: Reduce mobile-attributed HR helpdesk contacts by 40%. Baseline: 3,200/month. Target: <1,920/month. Timeline: 6 months.
+- KR4: App store rating ≥ 4.0 stars (iOS + Android combined average). Timeline: 6 months.
+- Counter-metric: Desktop session duration must not decrease (mobile redesign should not cause confusion that drives users back to desktop for tasks better done on mobile).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. USER RESEARCH FINDINGS (SUMMARY)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+8 usability sessions conducted in January 2025 (mix of individual contributors and managers, 4 companies, manufacturing/tech/healthcare sectors).
+
+Finding 1: Time-off request flow has 11 steps on mobile vs. 5 on desktop. 6 of 8 participants abandoned the flow at step 7 (calendar date picker). Redesign target: ≤5 steps on mobile.
+Finding 2: Pay stub load time averaged 9.2 seconds on 4G. Participants described this as "frustrating" or "broken." Performance baseline established for engineering.
+Finding 3: Manager approvals require navigating 3 levels deep. 5 of 8 manager participants said they delay approvals until at their desktop "because it's too fiddly" on mobile.
+Finding 4: Push notifications for action items were described as "helpful" by 7 of 8 participants but 5 said they are currently too frequent and "feel spammy."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Must Have (v4.0):
+- R1: Streamlined time-off request flow — maximum 5 steps. Calendar date picker rebuilt as native mobile component (no WebView). Auto-populate balance and team calendar.
+- R2: Pay stub performance — load time ≤2 seconds on 4G LTE. Implement lazy loading for document preview; cache last 3 pay stubs locally.
+- R3: Manager quick approvals widget — surface pending approvals on home screen with one-tap approve/decline + mandatory comment field for declines. No deep navigation required.
+- R4: Smart push notifications — implement notification preference centre. Default cadence: max 2 push notifications per day per user. Critical actions (same-day approvals, compliance deadlines) bypass throttle.
+- R5: Biometric authentication — Face ID / fingerprint for app login and sensitive data views (comp, banking). Mandatory for SOC2 compliance update.
+
+Should Have (v4.0):
+- R6: Home screen personalisation — user can pin up to 4 frequently used actions to their home screen.
+- R7: Offline mode for read-only data — view last-synced pay stubs, PTO balance, and benefits summary without network connection.
+
+Out of Scope (v4.0):
+- Expense reporting on mobile — tracked separately on the Finance product roadmap.
+- Performance review completion on mobile — desktop-first flow; mobile read-only only.
+- Apple Watch / wearable support.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. TECHNICAL CONSTRAINTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Must support iOS 16+ and Android 12+. No support for older OS versions (drops 4% of current user base — accepted by leadership).
+- All API calls must use Workday's existing mobile gateway. No direct database connections from the app.
+- Biometric auth must integrate with Workday's existing SSO layer (SAML 2.0 + OAuth 2.0). No custom auth implementation.
+- App binary size target: ≤ 80MB on iOS, ≤ 75MB on Android. Current: 94MB iOS, 88MB Android.

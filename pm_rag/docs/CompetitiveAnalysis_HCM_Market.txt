@@ -1,0 +1,95 @@
+COMPETITIVE ANALYSIS REPORT
+Topic: Workforce Planning & Employee Self-Service — Market Landscape
+Date: December 2024 | Author: Strategy & Competitive Intelligence, Demi Osei
+Distribution: Product Leadership, PM Team, Sales Enablement
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EXECUTIVE SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Workday maintains category leadership in enterprise HCM but faces increasing pressure from three vectors: (1) SAP SuccessFactors closing the feature gap in workforce planning, (2) point solutions like Rippling and Lattice winning mid-market deals on UX and speed-to-value, and (3) specialist planning tools Anaplan and Pigment attracting Workday customers who need advanced scenario modeling. The biggest competitive risk is not a direct attack on Workday's core HCM; it is customers expanding their tool landscape to cover gaps, reducing Workday's data centrality and platform stickiness.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMPETITOR 1: SAP SUCCESSFACTORS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Positioning: Enterprise HCM suite, primarily competing in large enterprise (5,000+ employees), strong in EMEA and manufacturing verticals.
+
+Workforce Planning:
+SuccessFactors launched People Analytics with Workforce Planning module in 2023. Key capabilities: headcount planning integrated with SAP's Financial Planning & Analysis (FP&A), native multi-entity and multi-currency support, skills-based workforce planning linked to SAP Learning. The SAP-to-SAP integration is their primary differentiator — customers running SAP ERP get a tighter finance-HR data loop than Workday can currently offer.
+
+Weakness: UI/UX consistently rated below Workday in analyst reports (Gartner MQ 2024). Customers describe the planning module as "powerful but complex — you need a consultant to set it up." Implementation timelines average 14 months vs. Workday's 9 months.
+
+Competitive implication: SAP is closing the planning feature gap. Workday's advantage is ease of use and implementation speed, but this is at risk if we don't move quickly on native planning capabilities. Multi-entity/multi-currency support is a concrete gap Workday needs to close to retain largest enterprise customers.
+
+Mobile:
+SuccessFactors mobile app rated 3.1 stars (iOS App Store, December 2024). Similar complaints to Workday: slow load times, complex navigation for approvals. No significant investment signals in mobile for 2025. This is not a competitive differentiator for either company.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMPETITOR 2: RIPPLING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Positioning: All-in-one HR + IT + Finance platform, primarily competing in mid-market (50–2,000 employees). Not a direct enterprise competitor but increasingly relevant as companies scale.
+
+Employee Self-Service:
+Rippling's mobile app is widely praised — 4.6 stars (iOS, December 2024). The UX is consumer-grade by design: time-off requests complete in under 60 seconds in internal benchmarks, pay stubs load in under 2 seconds, and the home screen intelligently surfaces relevant actions. Rippling is frequently cited in deal losses for companies in the 200-1,000 employee range.
+
+Workforce Planning:
+Rippling does not offer meaningful workforce planning for enterprise. No scenario modeling, no headcount analytics beyond basic reporting. This is not a competitive threat on planning.
+
+Competitive implication: Rippling is winning on UX and mobile experience in mid-market. As Workday pushes down-market or as mid-market companies using Rippling grow into enterprise, there is a risk of Workday losing to Rippling on the employee experience perception even if Workday wins on HCM depth. The mobile redesign (v4.0) is directly relevant to closing this gap.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMPETITOR 3: ANAPLAN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Positioning: Connected planning platform, used across Finance, Supply Chain, and HR. Not an HCM system — no employee records, no payroll, no benefits. Competes specifically on planning and analytics.
+
+Workforce Planning:
+Anaplan's workforce planning module is the most sophisticated in the market for large enterprise. Key capabilities: multi-dimensional scenario modeling with real-time calculation, native integration with SAP and Oracle ERP (and Workday via pre-built connector), skills-based headcount modeling, Monte Carlo simulation for attrition forecasting, full multi-entity and multi-currency support. Average model build time: 3–6 months with a partner.
+
+Pricing: Significant. Enterprise contracts reported in the $250,000–$2,000,000/year range depending on user count and modules. Anaplan is a strategic investment, not a tool adopted casually.
+
+Why Workday customers choose Anaplan: Consistently cited reasons from 6 win-loss interviews: (1) Workday scenario modeling is too limited for their CFO-level requirements, (2) Anaplan connects HR and Finance planning in one model which Workday cannot do, (3) for companies with complex org structures, Anaplan handles multi-entity natively.
+
+Competitive implication: Anaplan is not replacing Workday — customers use both. The risk is that Workday becomes a data source for Anaplan rather than the planning platform itself. This erodes Workday's strategic position in the C-suite conversation. If Workday launches a competitive planning capability, the value proposition is: "Stay in Workday — your data is already here, no integration required, no 6-month Anaplan implementation."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMPETITOR 4: LATTICE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Positioning: People management platform focused on performance, engagement, and development. Competes with Workday on the talent and development modules, not core HCM or payroll.
+
+Relevant to workforce planning: Lattice launched AI-powered headcount forecasting in Q3 2024. Current capability is limited — it forecasts attrition risk by team and recommends hiring triggers based on headcount thresholds. No multi-variable scenario modeling. But Lattice is a signal: even talent-focused vendors are moving into planning adjacent features.
+
+Mobile: Lattice mobile app rated 4.3 stars. Purpose-built for manager and employee engagement check-ins. Not a broad self-service tool — limited scope reduces surface area for bad UX.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FEATURE COMPARISON TABLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Capability                    | Workday (current) | SAP SF   | Rippling | Anaplan  | Lattice
+------------------------------|-------------------|----------|----------|----------|---------
+Headcount reporting           | Strong            | Strong   | Basic    | N/A      | Basic
+Native scenario modeling      | Weak              | Moderate | None     | Best     | Basic
+Multi-entity/multi-currency   | Partial           | Strong   | None     | Strong   | None
+AI-generated projections      | None              | Basic    | None     | Advanced | Basic
+NL query interface            | None              | None     | None     | None     | None
+Finance-HR planning bridge    | Weak              | Strong   | None     | Strong   | None
+Mobile self-service UX        | 2.8 stars         | 3.1 stars| 4.6 stars| N/A      | 4.3 stars
+Time-to-first-plan            | 14 hrs (survey)   | ~12 hrs  | N/A      | 3-6 mos  | N/A
+Implementation time           | 9 months avg      | 14 months| 2 months | 6 months | 3 months
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STRATEGIC IMPLICATIONS FOR PRODUCT ROADMAP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Workday's strongest competitive moat is its unified data estate. Every competitor either doesn't have the data (Anaplan, Lattice) or has it in a fragmented way (SAP). The AI planning assistant should be positioned as "planning that lives where your data already is — no integration tax, no data lag."
+
+2. Natural language interface is a genuine differentiator. No direct competitor offers NL-driven scenario modeling. This is a 12-18 month window before it becomes table stakes.
+
+3. Mobile UX is a reputational drag that affects deals across all segments. Rippling's 4.6-star app is a sales objection in mid-market deals. The v4.0 redesign is table stakes for Workday to stop losing on UX perception.
+
+4. Multi-entity and multi-currency are hard blockers for retaining the top 200 enterprise accounts (>10,000 employees, multi-national). SAP and Anaplan will continue to win these segments until Workday closes this gap. Recommend scoping into the v2 planning roadmap with a committed delivery date.
+
+5. The Anaplan partnership risk is real. 18% of enterprise customers use both Workday and Anaplan. If Workday planning becomes good enough, there is an opportunity to convert "Workday + Anaplan" customers to "Workday only" — a meaningful upsell and competitive win story.

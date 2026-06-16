@@ -1,0 +1,57 @@
+WIN-LOSS ANALYSIS REPORT
+Period: Q3–Q4 2024 | Deals Analysed: 24 (14 wins, 10 losses)
+Author: Sales Strategy, Kenji Watanabe | Input from: AEs, Customer Success, Product
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+OVERVIEW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+24 deal post-mortems were completed via structured interviews with the primary AE and, where accessible, the customer's decision-maker. Deals ranged from $180,000 to $2.4M ACV. All deals were enterprise (1,000+ employees). Competitive set in this period: SAP SuccessFactors (appeared in 9 deals), Rippling (4), Oracle HCM (3), ADP (2), Ceridian/Dayforce (2), status quo/no change (4).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WHY WE WON (14 wins)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Win reason 1 — Unified platform breadth (cited in 11/14 wins)
+Customers selected Workday because it covers HCM, Finance, and Planning in a single data model. The phrase "single source of truth" appeared in 8 of 14 win summaries. Customers who had previously used best-of-breed (e.g., ADP for payroll + Taleo for recruiting + Anaplan for planning) described integration maintenance as a major pain. Workday's platform consolidation was the primary justification to the CFO in most cases.
+
+Win reason 2 — Implementation confidence (cited in 9/14 wins)
+Workday's partner ecosystem and implementation methodology were cited as a reason for selection over SAP SuccessFactors in 6 of 9 competitive wins against SAP. Customers who had gone through a failed SAP implementation (2 deals) chose Workday explicitly based on implementation track record.
+
+Win reason 3 — Security and compliance posture (cited in 7/14 wins)
+Financial services and healthcare customers cited SOC2 Type II certification, HIPAA compliance, and Workday's data residency controls as differentiators. Competitors named in these wins: Oracle HCM (2), ADP (2), Ceridian (2), Rippling (1).
+
+Win reason 4 — Workday Community and ecosystem (cited in 5/14 wins)
+Customers valued the Workday Community (peer network, user groups, co-development opportunities). Several mentioned that having access to other HR leaders using Workday was a factor in their decision — particularly valued by HR Directors new to enterprise HCM.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WHY WE LOST (10 losses)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Loss reason 1 — Workforce planning capability gap (cited in 6/10 losses)
+This is the most significant product-driven loss reason in the period. 6 of 10 losses involved a customer whose CFO or FP&A team required scenario modeling that Workday could not deliver natively. In 4 of these cases, the customer selected Workday for HCM but added Anaplan for planning — a partial win. In 2 cases, SuccessFactors was selected because of its tighter SAP ERP integration enabling a combined HR + finance planning model.
+
+Direct quote from an AE post-mortem (deal lost to SuccessFactors + Anaplan, financial services, 9,000 employees): "The CHRO wanted Workday. The CFO wanted the finance integration. We couldn't bridge that. SuccessFactors could point to an existing SAP integration that connected HR headcount to their FP&A model. We had nothing equivalent to show."
+
+Loss reason 2 — Total cost of ownership (cited in 5/10 losses)
+Workday's ACV is consistently higher than competitors in this review. In 4 deals lost to SAP SuccessFactors and 1 to Ceridian, price was cited as the deciding factor after functionality was deemed comparable. Note: In 3 of these cases, the customer was in a cost-reduction cycle at the executive level — the price objection may not be addressable with product changes.
+
+Loss reason 3 — Mobile and UX (cited in 4/10 losses)
+Mobile experience was cited as a named reason for loss in 4 deals — 3 against Rippling (all mid-market), 1 against a status quo evaluation where the company decided to invest in Rippling rather than migrate to Workday. AEs reported that Rippling's mobile demo consistently outperformed Workday's in side-by-side comparisons. Quote from one AE: "The prospect's IT director pulled up both apps side by side and just showed the HR Director. Workday looked like it was from 2018. Rippling looked like a consumer app. That was the end of the conversation."
+
+Loss reason 4 — Implementation scope and timeline (cited in 3/10 losses)
+Three losses involved companies that had a hard go-live date driven by a system-of-record migration (typically from ADP or Oracle). Workday's standard implementation timeline of 9 months exceeded their window. In 2 cases, Ceridian/Dayforce won with a 5-month implementation promise.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PRODUCT IMPLICATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Workforce planning is a revenue problem, not just a product gap. 6 of 10 losses have a direct product cause we can address. This represents approximately $8.2M in lost ACV from this cohort alone.
+
+2. The mobile UX gap is creating real deal risk. 4 losses with mobile cited is a material number. The Rippling side-by-side comparison is becoming a repeatable sales scenario. The v4.0 redesign needs to ship and needs to be demoed proactively.
+
+3. The SAP + Anaplan integration story is a genuine blocker for the largest enterprise deals with existing SAP ERP. A Workday-native alternative to this integration is the most impactful product investment for the enterprise segment.
+
+4. Pricing is structural and unlikely to change. The 5 TCO-driven losses require a value justification response from Sales, not a product change.
+
+5. The "partial Workday" outcome (Workday HCM + Anaplan) is appearing more frequently. This is better than a full loss but represents a strategic risk if Anaplan begins to expand its footprint within these accounts.

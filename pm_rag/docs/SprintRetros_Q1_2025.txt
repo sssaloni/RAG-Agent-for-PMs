@@ -1,0 +1,130 @@
+SPRINT RETROSPECTIVES — Q1 2025
+Team: HCM Platform — Workforce Intelligence Squad
+Sprints: 2025-S01 through 2025-S06 (January – March 2025)
+Scrum Master: Leila Ahmadi | PM: Priya Nair
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SPRINT 2025-S01 (Jan 6 – Jan 17)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Planned story points: 34 | Completed: 26 | Velocity: 76%
+
+Went well:
+- Kickoff alignment session with Data team on schema access for planning model was productive. Agreed on read-only API access pattern — no direct DB queries.
+- Design system components for scenario comparison view were shared ahead of sprint start. Saved estimated 6 hours of implementation rework.
+
+Needs improvement:
+- Sprint planning overloaded with carry-over stories from Q4. Team felt pressure to accept more points than sustainable. 8 points of technical debt from Q4 still unresolved.
+- API documentation from the Compensation module was 2 versions out of date. Engineers spent 2 days reverse-engineering the correct endpoints.
+
+Actions:
+- PM to run a dedicated backlog refinement session before S02 planning to clear Q4 carry-over. (Owner: Priya. By: Jan 17)
+- Compensation team to update API docs and confirm with a shared Slack notification when done. (Owner: Daniel Cho to follow up with Comp Eng. By: Jan 24)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SPRINT 2025-S02 (Jan 20 – Jan 31)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Planned: 38 | Completed: 38 | Velocity: 100%
+
+Went well:
+- First full sprint at 100% velocity since Q3 2024. Team attributed this to the backlog refinement session from S01 action item.
+- Design handoff quality improved significantly — all spec files included edge cases and empty states. Zero "wait, what happens when there's no data?" questions during implementation.
+
+Needs improvement:
+- QA environment was unavailable for 1.5 days mid-sprint due to infra upgrade scheduled without team notice. Created a bottleneck where 3 engineers were blocked simultaneously.
+- The natural language input parser for scenario modeling is proving more complex than estimated. Story re-pointed from 8 to 13 points after spike. Risk to S03 scope.
+
+Actions:
+- Infra team to add the Workforce Intelligence QA environment to their change management notification list. (Owner: Leila. By: Feb 3)
+- PM to descope 5 story points from S03 to absorb NL parser complexity. Will move R7 (scenario versioning) to S04. (Owner: Priya. Confirmed in S03 planning)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SPRINT 2025-S03 (Feb 3 – Feb 14)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Planned: 32 | Completed: 29 | Velocity: 91%
+
+Went well:
+- Natural language parser MVP shipped and passed all unit tests. Initial accuracy on internal test dataset: 87% intent classification. Above the 85% threshold in the PRD.
+- Beta design partner onboarding session (4 customers) went well. Customers engaged and provided high-quality feedback on the scenario comparison UI.
+
+Needs improvement:
+- Mid-sprint scope addition: Security team flagged that comp data access in scenarios requires additional permission scoping not in the original design. Added 3 days of unplanned work. This is the third sprint in a row with a mid-sprint security requirement surfacing late.
+- Two team members were pulled into a separate incident response for a different product. This is becoming a recurring pattern that disrupts sprint commitments.
+
+Actions:
+- PM and Eng Lead to schedule a pre-sprint security review with the InfoSec team for any feature touching PII or comp data. Add as a standard step in the definition of ready. (Owner: Priya + Daniel. By: Feb 21)
+- Escalate the incident response staffing pattern to Engineering Director. Squad members should not be pulled mid-sprint without PM + Scrum Master sign-off. (Owner: Leila. By: Feb 14)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SPRINT 2025-S04 (Feb 17 – Feb 28)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Planned: 36 | Completed: 31 | Velocity: 86%
+
+Went well:
+- Pre-sprint security review (action from S03) worked well. Security flagged 2 additional requirements before sprint start rather than mid-sprint. Estimated this saved 4 days of rework.
+- Scenario versioning (R7) shipped. Ahead of revised schedule.
+
+Needs improvement:
+- Performance testing for the cost projection engine revealed that computation time exceeds 12 seconds for orgs above 15,000 employees. This is above the acceptable threshold in the PRD (8 seconds). Re-architecture needed.
+- Documentation lag: Engineering completed 4 stories with no corresponding update to the internal API docs. This creates onboarding issues for new engineers and integration partners.
+
+Actions:
+- Data team to schedule a performance spike for the computation engine. Explore query optimisation and caching strategies. Present options by March 7. (Owner: Ravi Subramaniam)
+- Add API documentation update as an acceptance criterion for all backend stories going forward. Definition of Done updated in Jira. (Owner: Daniel Cho. By: Mar 3)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SPRINT 2025-S05 (Mar 3 – Mar 14)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Planned: 34 | Completed: 34 | Velocity: 100%
+
+Went well:
+- Computation engine refactor shipped. New performance benchmarks: 2.8 seconds at 10,000 employees, 6.4 seconds at 25,000 employees. Both within PRD targets.
+- Beta feedback from design partners incorporated into 6 UI polish items. Partner NPS from beta check-in: 72 (strong positive signal).
+- Team morale notably higher — two team members mentioned the pre-sprint security review process is reducing stress.
+
+Needs improvement:
+- Rollout planning for the export feature (R5) was not started — assumed another team was leading. Discovered in final sprint week that we own this end to end. Starting 2 sprints later than needed.
+- One story was estimated at 3 points but required 11 points of effort due to an undiscovered dependency on the Org Management module. Estimation accuracy is still inconsistent for cross-module work.
+
+Actions:
+- PM to map all remaining v1 requirements against cross-team dependencies before S06 planning. Create a dependency matrix. (Owner: Priya. By: Mar 14)
+- Implement a cross-module dependency check question in the sprint planning template. (Owner: Leila. By: Mar 17)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SPRINT 2025-S06 (Mar 17 – Mar 28)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Planned: 40 | Completed: 36 | Velocity: 90%
+
+Went well:
+- Export feature (R5) completed despite late start. Team rallied and delivered core functionality (PDF + PPT). Branding templates still need 2 days of polish — carried to S07 as a minor item.
+- Dependency matrix from S05 action caught 3 cross-team blockers early. All three resolved before they could impact the sprint.
+- Design partner beta round 2 completed. All 4 partners rated the scenario comparison flow as "significantly better" than their current Excel process.
+
+Needs improvement:
+- Sprint scope was too large (40 points is above our demonstrated velocity range of 32-38). The team flagged this in planning but PM pushed to include stretch goals. 4 points of scope slipped.
+- Test coverage for the RBAC permission scoping remains at 67%. Target is 85% before launch. This is now a launch blocker.
+
+Actions:
+- PM to enforce the 34-point sprint cap going forward, regardless of pressure to accelerate. Stretch goals go on a separate prioritised list outside the sprint. (Owner: Priya. Effective S07)
+- RBAC test coverage to reach 85% in S07 — non-negotiable for launch readiness. (Owner: QA Lead. By: Apr 11)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Q1 2025 RETROSPECTIVE PATTERNS (SUMMARY)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Recurring themes across all 6 sprints:
+
+1. Cross-team dependencies are the #1 source of unplanned work. Surfaced in 4 of 6 sprints. The dependency matrix approach in S05 was the first effective mitigation. Should be standard practice.
+
+2. Security reviews landing mid-sprint caused disruption in 3 consecutive sprints (S01-S03) before the pre-sprint review process fixed it. Process change worked — zero mid-sprint security blockers in S04-S06.
+
+3. Sprint scope creep driven by optimism bias. Team consistently accepts 10-15% more points than sustainable velocity. PM ownership of this problem acknowledged.
+
+4. Documentation is a persistent gap. API docs and test coverage have both been flagged in 3+ sprints. Need structural enforcement (acceptance criteria, Definition of Done) rather than reminders.
+
+5. Team velocity stabilised at 88% average after the S01 backlog refinement. Q4 2024 average was 74%. The investment in process hygiene is paying off.

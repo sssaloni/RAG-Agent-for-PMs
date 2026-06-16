@@ -1,0 +1,89 @@
+PRODUCT REQUIREMENTS DOCUMENT
+Feature: AI-Powered Workforce Planning Assistant
+Version: 2.1 | Status: In Review | Last Updated: March 2025
+Author: Priya Nair, Senior PM — HCM Platform
+Reviewers: Eng Lead (Daniel Cho), Design (Sofia Mendez), Data (Ravi Subramaniam)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. PROBLEM STATEMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+HR leaders at enterprise customers (1,000–50,000 employees) spend an average of 14 hours per week manually consolidating headcount data from multiple Workday modules — Recruiting, Compensation, Learning, and Org Management — to produce workforce plans that are already stale by the time they are presented. In our Q4 2024 customer survey (n=312 HR Directors), 71% cited "inability to run real-time headcount scenarios" as their top pain point. Customers are exporting raw data to Excel and building fragile pivot tables outside Workday, creating version control nightmares and compliance risks. If we do not solve this, customers will adopt point solutions like Anaplan or Pigment for workforce planning, fragmenting the HR data estate and reducing platform stickiness.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. GOALS AND SUCCESS METRICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Primary Goal: Reduce time-to-first-workforce-plan for HR leaders by 70% within 90 days of feature launch.
+
+Key Results:
+- KR1: Reduce average time to generate a headcount scenario from 14 hours to under 4 hours. Measured via in-product telemetry on session duration for planning workflows. Baseline: 14 hrs (survey). Target: <4 hrs. Timeline: 90 days post-launch.
+- KR2: Achieve 40% weekly active usage among entitled customers within 60 days of launch. Baseline: N/A (new feature). Target: 40% WAU rate. Timeline: 60 days.
+- KR3: Reduce support tickets related to headcount data exports by 30%. Baseline: 48 tickets/month (last 6-month avg). Target: <34 tickets/month. Timeline: 90 days.
+- Counter-metric: Core Workday HCM CSAT must not drop below 4.2/5.0. Current baseline: 4.5/5.0.
+
+Business Goal: Increase net revenue retention (NRR) by reducing churn risk among the 23% of enterprise customers identified as "at risk" due to manual planning workflows.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. USER PERSONAS AND JOBS TO BE DONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Primary Persona: Elena — VP of HR, Financial Services, 8,000 employees
+- Job to be done: "When I need to present headcount scenarios to the CFO before a board meeting, I want to quickly model the cost impact of 3 different growth scenarios without involving a data analyst, so I can walk in prepared and credible."
+- Pain: Currently sends data requests to her HRIS team 5 days before any planning meeting. Receives a static spreadsheet. Cannot answer real-time 'what if' questions from the CFO.
+- Success: Generates and presents a live scenario in the meeting itself.
+
+Secondary Persona: Marcus — HR Business Partner, Technology sector, 3,200 employees
+- Job to be done: "When my business unit leader asks about the cost of a reorg, I want to model the impact on headcount and comp budget without waiting for Finance to run numbers, so I can be a strategic partner rather than a data relay."
+- Pain: No self-service access to planning tools. Dependent on central HR ops for any scenario work.
+
+Excluded persona (out of scope for v1): Frontline managers requesting shift scheduling. This is a separate product area handled by Workforce Management.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. SOLUTION OVERVIEW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The AI Workforce Planning Assistant is a new module within Workday HCM that allows HR leaders to:
+1. Create multi-variable headcount scenarios using natural language (e.g., "What if we grow Engineering by 15% and freeze all other hiring?")
+2. Instantly see cost, attrition risk, and skills gap projections across those scenarios
+3. Compare up to 3 scenarios side-by-side with a single-click presentation export
+4. Save and version-control scenarios linked directly to Workday's org hierarchy
+
+The AI layer uses Workday's existing data graph (employee, compensation, org, requisition data) and a fine-tuned planning model to generate projections. No external data transfer. All compute is within Workday's SOC2-certified cloud.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Must Have (v1):
+- R1: Natural language scenario input — user types a plain-English planning request; system interprets and maps to Workday data dimensions.
+- R2: Real-time cost projection — scenario changes reflect comp budget impact within 3 seconds for orgs up to 10,000 employees.
+- R3: Attrition risk overlay — system flags roles or departments with attrition risk >20% based on Workday's predictive attrition model.
+- R4: Scenario comparison view — up to 3 scenarios side-by-side with delta indicators (headcount, cost, skills coverage).
+- R5: PowerPoint/PDF export — one-click export of active scenario as a presentation-ready summary with Workday branding templates.
+- R6: Role-based access control — scenarios are visible only to the creator and named collaborators. Sensitive comp data redacted by default unless user has Compensation Analyst security group.
+
+Should Have (v1):
+- R7: Scenario versioning — save up to 20 named versions of a scenario. History accessible for 12 months.
+- R8: Natural language explanation — when a projection changes, system surfaces a 2-sentence explanation of the primary driver.
+
+Out of Scope (v1):
+- Integration with external financial planning tools (Anaplan, Adaptive Insights) — targeted for v2.
+- Shift and schedule planning for hourly workers — handled by Workforce Management product.
+- AI-generated hiring requisitions from scenarios — requires separate Legal/Compliance review.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+6. OPEN QUESTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Q1: Should scenario access be scoped to org unit or global by default? Legal flagged cross-org comp visibility as a risk. Decision needed from Compliance by April 4.
+Q2: What is the SLA for scenario computation above 10,000 employees? Data team estimates 8-12 seconds at 25,000 employees — is that acceptable? Need input from enterprise CS.
+Q3: Do we support multi-currency scenarios in v1 for multi-national customers? Currently excluded but 6 EMEA customers have flagged this.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+7. RISKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Risk 1 — AI projection accuracy: If the planning model produces projections that are more than 15% off from actuals, customers will lose trust and revert to Excel. Mitigation: 6-week beta with 12 design partners before broad release. Model accuracy threshold: >85% on holdout dataset.
+Risk 2 — Data privacy: Displaying compensation data in scenario views could violate internal equity policies in certain jurisdictions. Mitigation: Comp data always role-gated. Legal review required before EMEA launch.
+Risk 3 — Adoption: Feature discovery is low in Workday's dense navigation. Mitigation: In-product onboarding tour, customer success-led activation playbook.

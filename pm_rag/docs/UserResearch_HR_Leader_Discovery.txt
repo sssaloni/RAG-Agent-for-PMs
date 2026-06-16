@@ -1,0 +1,94 @@
+USER RESEARCH SYNTHESIS REPORT
+Study: Enterprise HR Leader Discovery — Workforce Planning & Analytics
+Date: January 2025 | Conducted by: UX Research, Amara Diallo
+Participants: 11 interviews | HR Directors, VPs of HR, CHROs
+Companies: Financial Services (3), Healthcare (3), Technology (2), Manufacturing (2), Retail (1)
+Company size range: 1,800 – 42,000 employees
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EXECUTIVE SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+HR leaders universally describe workforce planning as their most strategically important and most operationally painful activity. The core tension: they are expected to be strategic advisors to the C-suite, but their days are consumed by data wrangling that should be automated. Three major themes emerged: (1) the Excel dependency is deeply entrenched but genuinely despised, (2) real-time scenario modeling is the most wanted capability that does not currently exist natively in any tool they use, and (3) trust in AI-generated projections requires transparency about data sources and methodology.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+THEME 1: THE EXCEL TRAP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Finding: 9 of 11 participants manage their primary workforce plans in Excel or Google Sheets, despite having Workday as their system of record.
+
+Root cause: Workday's reporting is powerful but output-only. Participants can generate reports but cannot interact with the data — they cannot ask "what if" questions, change a variable, and see the impact instantly. Excel fills this gap as an interactive scratchpad.
+
+The workflow described by 7 participants:
+1. Export Workday headcount data (takes 20-45 minutes to configure the right report)
+2. Paste into a maintained Excel model (each company has their own bespoke template)
+3. Manually add data from other sources: Finance headcount budget (separate system), open requisitions (sometimes in Workday, sometimes in Greenhouse/Lever), attrition assumptions (based on gut feel or last year's rate)
+4. Build scenarios by duplicating the worksheet and changing numbers manually
+5. Create slides from the model for leadership presentations
+6. Repeat when assumptions change (often 3-4 times before a board meeting)
+
+Representative quote: "I have a Workday license and I have an Excel spreadsheet and I use Excel for everything that actually matters in planning. It's embarrassing but it's the truth. Workday is where data lives. Excel is where I think."
+— CHRO, Healthcare, 12,000 employees
+
+Representative quote: "The problem isn't getting data out of Workday. The problem is that once it's out, it's dead. I can't go back and say 'show me what happens if attrition goes up 5 points.' The spreadsheet doesn't know anything the report didn't tell it."
+— VP HR, Financial Services, 8,400 employees
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+THEME 2: SCENARIO MODELING IS THE CORE JOB
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Finding: Every participant described scenario modeling — not reporting — as the highest-value planning activity. All 11 said they cannot do this satisfactorily in their current tools.
+
+The 3 most common scenario types (mentioned by 8+ participants):
+1. Headcount growth scenarios: "What does our org look like and cost if we grow by X%?" Usually modeled for 3 growth rates: conservative, base, aggressive.
+2. Reorg scenarios: "What if we merge these two teams?" "What if we move these roles from one business unit to another?" Requires real-time org chart updates tied to cost impact.
+3. Attrition scenarios: "What if we lose our projected 12% attrition but it spikes to 18%?" Skills gap analysis tied to projected turnover.
+
+Key insight: The CFO relationship is the context driving urgency. 8 of 11 participants described scenarios they needed to produce in response to an unexpected question from their CFO or CEO. The inability to answer in real time creates credibility risk for HR leaders.
+
+Representative quote: "The CFO asked me in our last QBR what it would cost to backfill the entire engineering org if we hit our worst-case attrition scenario. I said I'd have to get back to her. I had that data. It just took me 3 days to build the model. By the time I had the answer, the conversation had moved on. That's my problem."
+— HR Director, Technology, 3,200 employees
+
+Representative quote: "I need to walk into that room and have the answer, not come back with it later. If I can't answer a what-if question on the spot, I'm not seen as a strategic partner. I'm seen as a report-runner."
+— VP HR, Manufacturing, 18,000 employees
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+THEME 3: AI TRUST REQUIRES TRANSPARENCY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Finding: All 11 participants expressed openness to AI-generated workforce projections, but 9 of 11 stated they would not use projections they could not explain or verify.
+
+The trust threshold: Participants don't need to understand the algorithm. They need to be able to say to their CFO: "This projection is based on our actual Workday headcount data, our current comp bands, and our 3-year attrition trends." They need a citable data source.
+
+What erodes trust:
+- Projection changes without explanation ("It just updated — I don't know why")
+- Numbers that don't match what they know from experience ("This says our engineering team costs X but I know it's higher")
+- Inability to drill down ("I can't get to the underlying data so I can't trust the summary")
+
+What builds trust:
+- Plain language explanations of projection drivers ("Cost increased because 3 senior roles in Engineering moved to a higher pay band in October")
+- Ability to override assumptions manually
+- Audit trail on who changed what and when
+
+Representative quote: "I'll use AI to do the math. I don't need to do the math. But I need to be able to look a CFO in the eye and say I know where this number came from. Right now with any AI tool I've tried, I can't do that."
+— CHRO, Retail, 6,100 employees
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECONDARY FINDINGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Finding 4 — Skills data is trusted least: When asked about the quality of data in their HR systems, 10 of 11 participants rated skills data as "unreliable" or "incomplete." Job profiles exist but employee skill records are largely self-reported and inconsistently updated. Any skills-gap projection will have low credibility until this data quality problem is addressed separately.
+
+Finding 5 — Benchmarking is an underserved need: 7 participants wanted external benchmarking data alongside their internal projections. "Is our 14% attrition rate high for our industry?" No current Workday feature addresses this. Represents a future opportunity.
+
+Finding 6 — Multi-entity complexity for enterprise: 4 of the largest companies (10,000+ employees) operate across multiple legal entities with different cost structures, currencies, and labor laws. Single-entity planning tools break down at this scale. This was flagged as a reason two participants are evaluating Anaplan.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+IMPLICATIONS FOR PRODUCT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. The core job is interactive scenario modeling, not better reporting. Any solution that is output-only will not replace Excel.
+2. Natural language input is viable and desirable — participants responded positively to the prototype concept. Key requirement: the system must interpret the request and show what Workday data it used before computing.
+3. Explainability is not optional — every AI-generated number needs a plain-language driver explanation. This is a trust requirement, not a UX enhancement.
+4. Skills gap features should be clearly caveated in v1 or deferred — the underlying data quality problem will undermine any skills projection feature until customers improve their skills data hygiene.
+5. Multi-entity and multi-currency support is a hard blocker for the largest enterprise segment. Scope must be clearly communicated.

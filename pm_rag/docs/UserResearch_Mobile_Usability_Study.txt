@@ -1,0 +1,106 @@
+USABILITY TEST REPORT
+Study: Workday Mobile App v3.8 — Employee Self-Service Flows
+Date: January 2025 | Researcher: UX Research, Ben Harrington
+Participants: 8 sessions (5 individual contributors, 3 managers)
+Method: Moderated remote usability testing via Zoom + Lookback
+Device split: 5 iPhone (iOS 17), 3 Android (Samsung Galaxy, Android 13)
+Companies: 4 (Manufacturing, Healthcare, Technology, Retail)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STUDY OBJECTIVES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Identify friction points in the time-off request flow
+2. Understand how managers handle approval tasks on mobile
+3. Evaluate perceived performance of pay stub access
+4. Assess notification preferences and pain points
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TASK 1: REQUEST 3 DAYS OF VACATION STARTING NEXT MONDAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Success rate: 5/8 completed without assistance
+Average time: 4 minutes 12 seconds
+Task failure points:
+- Step 7 (calendar date picker): 6 of 8 participants struggled. The date picker renders as a WebView component — pinch/zoom gestures do not work as expected. 3 participants accidentally selected the wrong dates. 2 participants abandoned here.
+- Step 9 (balance confirmation screen): 2 participants did not realise this was a confirmation step vs. completion and tried to navigate back.
+
+Observations:
+- All 8 participants expected to see their current PTO balance on the first screen of the flow — it appears only at step 4, causing 3 participants to restart or hesitate.
+- 7 of 8 participants wanted to see who on their team is already off during their requested dates before submitting. Team calendar visibility is only available after submission in current flow.
+
+Representative quote: "Why do I have to go through all of this before it tells me how many days I have left? That's the first thing I need to know."
+— Individual contributor, Manufacturing
+
+Representative quote: "The calendar is basically unusable on my phone. I have fat fingers, what can I say. I ended up submitting for the wrong week and had to cancel and redo it."
+— Individual contributor, Healthcare
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TASK 2: APPROVE A PENDING TIME-OFF REQUEST (MANAGERS ONLY)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Participants: 3 managers
+Success rate: 2/3 completed without assistance
+Average time: 3 minutes 8 seconds (vs. 45 seconds on desktop — benchmarked)
+
+Navigation path observed:
+Home → Menu → My Team → Time Off → Pending Approvals → Select Request → Approve
+
+All 3 participants commented that this navigation was too deep. Manager 2 said: "By the time I get here I forget why I opened the app."
+
+Key finding: All 3 managers stated they routinely delay mobile approvals until they are at a desktop. Manager 1: "If I'm waiting for a coffee I might try, but usually I just leave it for when I'm at my desk." This delays approvals by an average of 4-6 hours per their estimates, which creates downstream issues for employees trying to book travel.
+
+Pending approvals are not surfaced on the home screen in any persistent way. One push notification is sent when the request is submitted; if the manager misses it, there is no re-prompting.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TASK 3: VIEW YOUR MOST RECENT PAY STUB
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Success rate: 8/8
+Average load time recorded: 9.2 seconds (range: 6.8s – 13.4s) on 4G LTE
+Average load time on WiFi: 3.1 seconds
+
+5 of 8 participants made a comment during the wait (unprompted):
+- "Is this loading?" (3 participants)
+- "I wonder if it's broken" (1 participant)
+- "Takes forever" (1 participant)
+
+No loading indicator is shown after the initial spinner disappears, which creates a perception of hang/failure. All 8 participants saw a blank white screen for 4-8 seconds before content appeared.
+
+Participants were asked to rate satisfaction with pay stub access: Average 2.1/5.0.
+Primary reason cited: load time. Secondary reason: no offline access (4 participants mentioned wanting to check pay stubs when they have no signal, e.g., on a plane).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TASK 4: NOTIFICATION PREFERENCES EXPLORATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Method: Discussion, not task-based. Participants shown their notification history for the prior 7 days.
+
+Average notifications received in 7 days (from Workday): 22 (range: 8–41)
+Participants who described volume as "too many": 5/8
+Participants who had already turned off all Workday push notifications: 2/8 (both cited volume as the reason)
+
+Notification types participants said they WANT to receive:
+- Time-off request approved/declined (8/8)
+- Action required today (approvals with deadlines) (7/8)
+- Open enrollment reminders (5/8)
+- Pay stub available (4/8)
+
+Notification types participants said they DON'T want:
+- Training reminders for non-required courses (7/8)
+- "Your profile is X% complete" (8/8)
+- Weekly summary digests (6/8)
+- System maintenance notices (8/8)
+
+Representative quote: "I turned them all off because I was getting pinged constantly about completing my learning plan. Now I miss things that actually matter. There's no middle ground."
+— Manager, Technology
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+RECOMMENDATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Priority 1 (critical): Rebuild date picker as native mobile component. Current WebView implementation is the single biggest friction point across the most-used flow.
+Priority 2 (critical): Surface pending manager approvals on home screen with one-tap action. Deep navigation is killing manager adoption of mobile approvals.
+Priority 3 (high): Implement skeleton loading states for pay stub. The blank white screen is perceived as a crash. A visible progress state buys tolerance for load time while engineering improves performance.
+Priority 4 (high): Redesign notification system. Implement preference centre with granular category controls. Ship a conservative default set (time-off + critical deadlines only) to rebuild trust with users who have opted out entirely.
+Priority 5 (medium): Show PTO balance and team calendar on step 1 of the time-off request flow. This is a single data display change with high perceived value.

@@ -4,6 +4,14 @@ Ask natural language questions across your PRDs, user research notes, sprint ret
 
 ---
 
+## 🏗️ System Architecture & Processes
+
+The complete architecture and process flows (loading, chunking, embeddings, and vector database processes) are documented here:
+*   📄 **Architecture Document**: [agent_architecture.md](../agent_architecture.md)
+*   🖼️ **System Diagram**: [rag_agent_architecture.png](../rag_agent_architecture.png)
+
+---
+
 ## What this project does
 
 This project demonstrates a simple RAG pipeline for Product Managers.

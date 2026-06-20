@@ -1,131 +1,84 @@
 # PM RAG — Product Manager Knowledge Base
 
-Ask natural language questions across your PRDs, user research notes, sprint retrospectives, and competitive analysis documents using Retrieval-Augmented Generation (RAG).
+An interactive Retrieval-Augmented Generation (RAG) system for Product Managers to query internal documents (PRDs, user research notes, retrospectives, and competitive analysis) using natural language.
 
 ---
 
 ## 🏗️ System Architecture & Processes
 
-The complete architecture and process flows (loading, chunking, embeddings, and vector database processes) are documented here:
-*   📄 **Architecture Document**: [agent_architecture.md](../agent_architecture.md)
-*   🖼️ **System Diagram**: [rag_agent_architecture.png](../rag_agent_architecture.png)
+Before running the application, you can review the complete architecture details and process flows (document loading, splitting, chunking, embeddings, and vector stores):
+*   📄 **Architecture Document**: [agent_architecture.md](agent_architecture.md)
+*   🖼️ **System Diagram**: [rag_agent_architecture.png](rag_agent_architecture.png)
 
 ---
 
-## What this project does
+## 🚀 Getting Started
 
-This project demonstrates a simple RAG pipeline for Product Managers.
+Follow these steps to set up the environment, ingest documents, and run the query pipeline.
 
-It:
-
-* Loads PDFs and text documents
-* Splits them into chunks
-* Creates embeddings using OpenAI
-* Stores them in ChromaDB
-* Retrieves relevant context
-* Uses GPT to answer questions grounded in your documents
+### Prerequisites
+*   **Python 3.11.x** installed.
+    > [!WARNING]
+    > This project is not compatible with Python 3.14+ due to dependency limitations in older versions of NumPy and LangChain. Check your version with `python --version`.
+*   **OpenAI API Key** (for embeddings and chat generation).
+*   **Internet Access** (to connect to the OpenAI API).
 
 ---
 
-## Prerequisites
+### Step 1: Set Up Virtual Environment
 
-Before starting, make sure you have:
+Activate the virtual environment from the root directory:
 
-* Python 3.11.x installed
-* An OpenAI API key
-* Internet access
-
-⚠️ **Important:** This project is not compatible with Python 3.14 due to dependency limitations in NumPy and LangChain.
-
-Check your Python version:
-
-```bash
-python --version
-```
-
-You should see something like:
-
-```text
-Python 3.11.x
-```
-
----
-
-## Setup
-
-### 1. Clone or copy this folder
-
-```bash
-cd pm_rag
-```
-
-### 2. Create a virtual environment
-
-Windows PowerShell:
-
+**Windows PowerShell:**
 ```powershell
+# If virtual environment is not created:
 py -3.11 -m venv venv
+
+# Activate:
 .\venv\Scripts\Activate.ps1
 ```
 
-macOS/Linux:
-
+**macOS/Linux:**
 ```bash
+# If virtual environment is not created:
 python3.11 -m venv venv
+
+# Activate:
 source venv/bin/activate
 ```
 
-You should see:
-
-```text
-(venv)
-```
-
-in your terminal.
+You should see `(venv)` prepended to your terminal prompt.
 
 ---
 
-### 3. Upgrade pip
+### Step 2: Install Dependencies
 
+Upgrade `pip` and install all required packages:
 ```bash
 python -m pip install --upgrade pip
+pip install -r pm_rag/requirements.txt
 ```
 
 ---
 
-### 4. Install dependencies
+### Step 3: Configure Environment Variables
 
-```bash
-pip install -r requirements.txt
-```
-
----
-
-### 5. Create a `.env` file
-
-Create a file named `.env` in the project root:
-
+Create a `.env` file in the root directory and add your OpenAI API Key:
 ```env
-OPENAI_API_KEY=sk-your-openai-key-here
+OPENAI_API_KEY=sk-your-openai-api-key-here
 ```
-
-Do not commit this file to Git.
+> [!IMPORTANT]
+> Keep your API key private. Do not commit `.env` to Git.
 
 ---
 
-### 6. Add your documents
+### Step 4: Add Your Documents
 
-Drop your documents into the `docs/` folder.
+Drop your PDFs or TXT files into the `pm_rag/docs/` directory.
 
-Supported formats:
-
-* `.pdf`
-* `.txt`
-
-Example:
-
+Example structure:
 ```text
-docs/
+pm_rag/docs/
 ├── PRD_AI_Workforce_Planning.pdf
 ├── UserResearch_Q2.pdf
 ├── SprintRetros_Q1.txt
@@ -134,67 +87,71 @@ docs/
 
 ---
 
-## Run the pipeline
+### Step 5: Run the Ingestion Pipeline
 
-### Step 1: Build the vector database
-
-Run this whenever documents change.
-
+Whenever you add or modify documents in the `docs/` folder, run the ingestion script to load, chunk, embed, and store them in Chroma DB:
 ```bash
-python ingest.py
+python pm_rag/ingest.py
 ```
 
 Expected output:
-
 ```text
-Loading documents...
-Chunking documents...
-Embedding and storing in Chroma...
-Ingestion complete!
+=== PM RAG — Ingestion Pipeline ===
+
+Step 1: Loading documents from ./docs ...
+  Loaded PDF: PRD_AI_Workforce_Planning.pdf (4 pages)
+  Loaded TXT: SprintRetros_Q1.txt
+  Total pages/sections loaded: 5
+
+Step 2: Chunking documents ...
+  Split into 18 chunks
+
+Step 3: Embedding and storing in Chroma ...
+  Stored 18 chunks in Chroma at ./chroma_db
+
+Done. Run query.py to start asking questions.
 ```
 
 ---
 
-### Step 2: Ask questions interactively
+## 🔍 Running Queries & Interfaces
 
+You can interact with the RAG pipeline in three ways:
+
+### Option A: Launch the Web Dashboard (Recommended)
+Start the Flask backend server:
 ```bash
-python query.py
+python pm_rag/server.py
 ```
+Open your browser and navigate to:
+👉 **[http://localhost:5000](http://localhost:5000)**
 
-Example:
-
-```text
-Ask a question:
->
-```
+This web GUI includes:
+*   **Chat tab**: Interactive chat window with live citations, latency tracing, and source document previews.
+*   **Documents tab**: Lists all documents currently loaded into the system categorized by type.
+*   **DB Explorer tab**: Allows you to browse every raw text chunk and metadata record inside the vector database.
+*   **Semantic Search tab**: Query the database directly to inspect cosine similarity scores and document matching.
 
 ---
 
-### Step 3: Run sample questions
-
+### Option B: Interactive CLI (Command Line)
+Ask questions directly from your terminal:
 ```bash
-python app.py
+python pm_rag/query.py
 ```
+Type `quit` or `exit` to exit.
 
 ---
 
-### Step 4: Launch the web interface
-
+### Option C: Run Sample Queries Script
+Execute a quick pre-defined batch of test queries:
 ```bash
-python server.py
+python pm_rag/app.py
 ```
-
-Open:
-
-```text
-http://localhost:5000
-```
-
-in your browser.
 
 ---
 
-## Example questions
+## 💡 Example Questions to Try
 
 ```text
 What were the top user pain points from the Q2 research?
@@ -206,216 +163,67 @@ What blockers kept recurring in our retros last quarter?
 How does our product compare to Competitor X on pricing?
 
 What was the scope of the notification centre feature?
-
-Which user segments did we decide to exclude in the personas document?
 ```
 
 ---
 
-## Folder structure
+## 🛠️ Tuning & Optimization Tips
+
+| Symptom | Cause | Solution |
+| :--- | :--- | :--- |
+| **Answers are too generic** | The system prompt is too broad | Update `PM_SYSTEM_PROMPT` in `pm_rag/query.py` or `pm_rag/server.py` |
+| **Incorrect chunks retrieved** | The question was too vague | Ask more specific questions (e.g. naming specific features or segments) |
+| **Missing context** | Chunk size is too large | Adjust `CHUNK_SIZE` in `pm_rag/ingest.py` to `300` and re-run ingestion |
+| **Answers are too long** | LLM output constraints missing | Add "Answer in 2-3 sentences" to the system prompt guidelines |
+| **Hallucinated details** | Temperature is too high | Ensure `temperature=0` is set when initializing `ChatOpenAI` |
+| **Slow responses** | Model latency | Ensure you are using `gpt-4o-mini` instead of larger models |
+
+---
+
+## 🔧 Troubleshooting
+
+### 1. NumPy/Chroma Installation Fails
+*   **Cause**: Incompatibility with Python 3.12+.
+*   **Fix**: Ensure you are using Python 3.11.x to build your virtual environment.
+
+### 2. KeyError: `'_type'`
+*   **Cause**: A conflict with an existing Chroma DB cache created with a different schema/package version.
+*   **Fix**: Delete the `chroma_db` folder and rebuild.
+    *   *Windows*: `Remove-Item -Recurse -Force .\pm_rag\chroma_db`
+    *   *macOS/Linux*: `rm -rf pm_rag/chroma_db`
+    *   Then run `python pm_rag/ingest.py`.
+
+### 3. OpenAI Client got unexpected argument `'proxies'`
+*   **Cause**: Incompatible `httpx` and `openai` library versions.
+*   **Fix**: Pin `httpx` version:
+    ```bash
+    pip install httpx==0.27.2
+    ```
+
+### 4. Flask Not Found / Server Fails to Start
+*   **Cause**: Dependencies not correctly loaded in the virtual environment.
+*   **Fix**: Ensure your venv is activated, then run:
+    ```bash
+    pip install -r pm_rag/requirements.txt
+    ```
+
+---
+
+## 📂 Project Structure
 
 ```text
-pm_rag/
-├── docs/               # Drop your PDFs and TXT files here
-├── chroma_db/          # Auto-generated vector database
-├── static/             # Frontend assets for the web UI
-├── ingest.py           # Load → chunk → embed → store
-├── query.py            # Retrieve → prompt → generate
-├── app.py              # Built-in sample queries
-├── server.py           # Flask web application
-├── requirements.txt
-├── .env                # OPENAI_API_KEY (never commit)
-├── .gitignore
-└── README.md
+RAG-Agent-for-PMs-main/
+├── pm_rag/
+│   ├── docs/               # Put your PDFs and TXT files here
+│   ├── chroma_db/          # Persistent Chroma DB vector database
+│   ├── static/             # Frontend client assets (HTML/JS/CSS)
+│   ├── ingest.py           # Ingestion pipeline (loader -> splitter -> embedder -> Chroma)
+│   ├── query.py            # CLI query interface (retriever -> prompt -> LLM)
+│   ├── app.py              # Sample queries test script
+│   ├── server.py           # Flask REST API backend
+│   └── requirements.txt    # Project dependencies pins
+├── agent_architecture.md   # Process flows and architecture description
+├── rag_agent_architecture.png # Visual system architecture diagram
+├── .env                    # Environment variables (OPENAI_API_KEY)
+└── README.md               # Main documentation (this file)
 ```
-
----
-
-## Troubleshooting
-
-### Python version errors
-
-Problem:
-
-```text
-NumPy installation fails
-```
-
-Fix:
-
-Use Python 3.11.
-
----
-
-### ChromaDB `_type` error
-
-Problem:
-
-```text
-KeyError: '_type'
-```
-
-Cause:
-
-An old Chroma database exists from a different version.
-
-Fix:
-
-Delete the vector database and rebuild it.
-
-Windows:
-
-```powershell
-Remove-Item -Recurse -Force .\chroma_db
-```
-
-macOS/Linux:
-
-```bash
-rm -rf chroma_db
-```
-
-Then run:
-
-```bash
-python ingest.py
-```
-
----
-
-### OpenAI `proxies` error
-
-Problem:
-
-```text
-Client.__init__() got an unexpected keyword argument 'proxies'
-```
-
-Cause:
-
-Incompatible `httpx` version.
-
-Fix:
-
-```bash
-pip install httpx==0.27.2
-```
-
----
-
-### Flask not found
-
-Problem:
-
-```text
-ModuleNotFoundError: No module named 'flask'
-```
-
-Fix:
-
-```bash
-pip install flask flask-cors
-```
-
----
-
-### Answers don't improve after adding documents
-
-Cause:
-
-The vector database was not rebuilt.
-
-Fix:
-
-```bash
-python ingest.py
-```
-
-again.
-
----
-
-## Prompt engineering tips
-
-There are two places where prompt quality directly affects output quality.
-
-### 1. Improve the system prompt
-
-Open `query.py` and locate:
-
-```python
-PM_SYSTEM_PROMPT
-```
-
-This prompt wraps retrieved context before it is sent to GPT.
-
-Good prompts should instruct the model to:
-
-* Answer specifically
-* Cite sources
-* Avoid hallucinations
-* Format responses for PM audiences
-
----
-
-### 2. Ask better questions
-
-Weak:
-
-```text
-What do users think?
-```
-
-Strong:
-
-```text
-What were the top three pain points mentioned by mid-market HR managers in our Q2 discovery interviews related to the candidate tracking workflow?
-```
-
-Specific questions improve retrieval quality.
-
----
-
-## Tuning tips
-
-| Problem                 | Fix                                                |
-| ----------------------- | -------------------------------------------------- |
-| Answers are too generic | Improve the system prompt                          |
-| Wrong chunks retrieved  | Ask more specific questions                        |
-| Missing context         | Reduce `CHUNK_SIZE` in `ingest.py` and rebuild     |
-| Answers are too long    | Add "Answer in 2–3 sentences" to the system prompt |
-| Hallucinated facts      | Set temperature to `0`                             |
-| Slow responses          | Use `gpt-4o-mini`                                  |
-| Documents changed       | Re-run `python ingest.py`                          |
-
----
-
-## How the RAG pipeline works
-
-```text
-Documents
-    ↓
-Load Documents
-    ↓
-Chunk Documents
-    ↓
-Create Embeddings
-    ↓
-Store in ChromaDB
-    ↓
-User Question
-    ↓
-Create Query Embedding
-    ↓
-Similarity Search
-    ↓
-Retrieve Relevant Chunks
-    ↓
-GPT Generates Answer
-    ↓
-Return Response
-```
-
-In simple terms:
-
-> This project is like an open-book exam. Instead of answering from memory, GPT first looks up relevant information from your documents and then uses that information to generate an answer.

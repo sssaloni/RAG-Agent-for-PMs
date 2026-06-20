@@ -6,7 +6,8 @@ An interactive Retrieval-Augmented Generation (RAG) system for Product Managers 
 
 ## 🏗️ System Architecture & Processes
 
-Before running the application, you can review the complete architecture details and process flows (document loading, splitting, chunking, embeddings, and vector stores):
+Before running the application, you can review the beginner's conceptual guide, system architecture details, and process flows:
+*   📄 **Beginner's Build Guide**: [build_guide.md](build_guide.md) (A conceptual handbook for starting to build your own RAG agent from scratch)
 *   📄 **Architecture Document**: [agent_architecture.md](agent_architecture.md)
 *   🖼️ **System Diagram**: [rag_agent_architecture.png](rag_agent_architecture.png)
 
@@ -22,6 +23,17 @@ Follow these steps to set up the environment, ingest documents, and run the quer
     > This project is not compatible with Python 3.14+ due to dependency limitations in older versions of NumPy and LangChain. Check your version with `python --version`.
 *   **OpenAI API Key** (for embeddings and chat generation).
 *   **Internet Access** (to connect to the OpenAI API).
+
+---
+
+### Step 0: Clone the Repository
+
+Clone this repository to your local machine and navigate into the project root directory:
+
+```bash
+git clone https://github.com/your-username/RAG-Agent-for-PMs.git
+cd RAG-Agent-for-PMs
+```
 
 ---
 
